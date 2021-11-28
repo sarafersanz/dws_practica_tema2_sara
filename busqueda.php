@@ -1,10 +1,39 @@
 <?php
 require_once('Ninos.php');
+require_once('Recibidos.php');
+require_once('Juguetes.php');
 $ninos = new Ninos();
-$rows = $ninos->selectAll();
-if ($rows->num_rows == 0) {
+$rows_ninos = $ninos->selectAll();
+if ($rows_ninos->num_rows == 0) {
     $mensajeKO = 'No existen datos.';
 }
+
+if (isset($_POST["buscar"])) {
+    $id_nino = $_POST["nino"];
+    $recibidos = new Recibidos();
+    $juguetesDeNino = $recibidos->selectFromNino($id_nino);
+
+    $juguete = new Juguetes();
+    $rows_juguetes = $juguete->selectAll();
+    if ($rows_juguetes->num_rows == 0) {
+        $mensajeKO = 'No existen datos.';
+    }
+}
+
+if(isset($_POST["anadir"])){
+    $id_nino = $_POST["id_nino"];
+    $id_juguete = $_POST["juguete"];
+    $recibidos = new Recibidos();
+    try {
+        $id = $recibidos->insert($id_nino, $id_juguete);
+        /* if ((int) $id) {
+            header('Location:busqueda.php?msg=55&id=' . $id);
+        } */
+    } catch (Exception $ex) {
+        $mensajeKO = $ex->getMessage();
+    }
+}
+
 
 
 
@@ -44,10 +73,10 @@ if ($rows->num_rows == 0) {
                 <form method="POST" action="busqueda.php">
                     <div class="form-row">
                         <div class="form-group col-6">
-                            <select id="inputState" class="form-control" name="nino">
+                            <select id="inputChildren" class="form-control" name="nino">
                                 <option selected>Elige un niño...</option>
                                 <?php
-                                while ($fila = $rows->fetch_assoc()) {
+                                while ($fila = $rows_ninos->fetch_assoc()) {
                                     $id = $fila['id_nino'];
                                     $nombre = $fila['nombre'];
                                     echo "<option value=$id>$nombre</option>";
@@ -56,17 +85,55 @@ if ($rows->num_rows == 0) {
                             </select>
                         </div>
                         <div class="form-group col-6">
-                            <button type="submit" class="btn btn-info">Buscar</button>
+                            <button type="submit" class="btn btn-info" name="buscar">Buscar</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-8 offset-md-2 mt-4">
-                                
+
+        <?php
+        if (isset($_POST["buscar"])) { ?>
+            <div class='row'>
+                <div class='col-12 col-md-8 offset-md-2 mt-4'>
+                    <h5>Los juguetes son:</h5>
+                    <ul>
+                        <?php
+                        while ($fila = $juguetesDeNino->fetch_assoc()) {
+                            $nombre_juguete = $fila['nombre'];
+                            echo "<li>$nombre_juguete</li>";
+                        }
+                        ?>
+                    </ul>
+                </div>
             </div>
-        </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 offset-md-2 mt-4">
+                    <form method="POST" action="busqueda.php">
+                        <input type="hidden" name="id_nino" value="<?php $id_nino ?>">
+                        <div class="form-row">
+                            <div class="form-group col-6">
+                                <select id="inputToys" class="form-control" name="juguete">
+                                    <option selected>Elige un juguete...</option>
+                                    <?php
+                                    while ($fila = $rows_juguetes->fetch_assoc()) {
+                                        $id = $fila['id_juguete'];
+                                        $nombre = $fila['nombre'];
+                                        echo "<option value=$id>$nombre</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group col-6">
+                                <button type="submit" class="btn btn-info" name="anadir">Añadir</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        <?php
+        } ?>
+
     </div>
 </body>
 

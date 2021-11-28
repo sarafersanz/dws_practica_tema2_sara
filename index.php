@@ -1,21 +1,3 @@
-<?php
-require_once('Ninos.php');
-$modelo = new Ninos();
-$rows = $modelo->selectAll();
-if ($rows->num_rows == 0) {
-    $mensajeKO = 'No existen datos de niños.';
-}
-if (!empty($_GET)) {
-    $idMensaje = (int) filter_input(INPUT_GET, 'msg');
-    if ($idMensaje == 77) {
-        $mensajeOK = 'El niño ha sido borrado correctamente.';
-    } else if ($idMensaje == 66) {
-        $mensajeKO = 'Lo sentimos pero los datos introducidos no existen.';
-    }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,53 +12,24 @@ if (!empty($_GET)) {
 
 <body>
     <div class="container">
-        <div class="row text-center py-3">
-            <div class="col-12 col-md-8 offset-md-2 mt-4">
-                <p>Practica || Tema 2 || BD en PHP</p>
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="ninos/ninos.php">Niños</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="regalos/regalos.php">Regalos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="busqueda.php">Busqueda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reyes/reyes.php">Reyes Magos</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="row text-center">
-            <div class="col-12 col-md-8 offset-md-2 mt-4">
-                <a href="" class="btn btn-success float-right">Añadir</a>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-12 col-md-8 offset-md-2 mt-4">
-                <h1> NIÑOS</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-8 offset-md-2 mt-4">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th class="text-center">ID</th>
-                            <th class="text-center">Nombre</th>
-                            <th class="text-center">Apellido</th>
-                            <th class="text-center">Bueno</th>
-                            <th class="text-center">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php while ($row = $rows->fetch_assoc()) { ?>
-                            <tr>
-                                <td><?php echo $row['id_nino']; ?></td>
-                                <td><?php echo $row['nombre']; ?></td>
-                                <td><?php echo $row['apellido']; ?></td>
-                                <td><?php echo $row['bueno']; ?></td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        <a href="" class="btn btn-info float-right">Editar</a>
-                                        <a href="" class="btn btn-danger float-right">Borrar</a>
-                                    </div>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
     </div>
 </body>
 
