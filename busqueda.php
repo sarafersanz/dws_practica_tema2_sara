@@ -13,7 +13,7 @@ if (isset($_POST["buscar"])) {
     $recibidos = new Recibidos();
     $juguetesDeNino = $recibidos->selectFromNino($id_nino);
 
-    $juguete = new Juguetes();
+    $juguete = new Regalos();
     $rows_juguetes = $juguete->selectAll();
     if ($rows_juguetes->num_rows == 0) {
         $mensajeKO = 'No existen datos.';
