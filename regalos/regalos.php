@@ -24,25 +24,25 @@ if (!empty($_GET)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link href="assets/css/site.css" rel="stylesheet">
+    <link href="../assets/css/site.css" rel="stylesheet">
     <title>DWS ||Práctica T2 || BD en PHP</title>
 </head>
 
 <body>
     <div class="container">
         <div class="row text-center py-3">
-            <div class="col-12 col-md-8 offset-md-2 mt-4">
+            <div class="col-12  mt-4">
                 <p>Practica || Tema 2 || BD en PHP</p>
             </div>
         </div>
         <div class="row text-center">
-            <div class="col-12 col-md-8 offset-md-2 mt-4">
+            <div class="col-12  mt-4">
                 <a href="crear.php" class="btn btn-success float-right">Añadir</a>
-                <a href="../index.php" class="btn btn-warning float-right">Volver</a>
+                <a href="../index.php" class="btn btn-warning float-right">Inicio</a>
             </div>
         </div>
         <div class="row text-center">
-            <div class="col-12 col-md-8 offset-md-2 mt-4">
+            <div class="col-12  mt-4">
                 <h1> REGALOS</h1>
                 <?php if (isset($mensajeOK)) { ?>
                     <div class="alert alert-success" role="alert">
@@ -56,8 +56,8 @@ if (!empty($_GET)) {
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-8 offset-md-2 mt-4">
-                <table class="table table-striped text-center">
+            <div class="col-12  mt-4">
+                <table class="table table-striped text-center bg-opacity border">
                     <thead>
                         <tr>
                             <th>ID</th>

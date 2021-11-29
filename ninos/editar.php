@@ -40,17 +40,24 @@ if ($nino == null) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="../assets/css/site.css" rel="stylesheet">
     <title>Editar niño</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-4 offset-md-4 mt-4">
-                <div class="btn-group float-right">
-                    <a href="ninos.php" class="btn btn-primary">Volver al listado</a>
-                    <a href="crear.php" class="btn btn-success">Crear niño</a>
-                </div>
+    <div class="container pb-5">
+        <div class="row text-center py-3">
+            <div class="col-12 col-md-8 offset-md-2 mt-4">
+                <p class="bg-opacity">Practica || Tema 2 || BD en PHP</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 col-md-8 offset-md-2 mt-4">
+                <a href="ninos.php" class="btn btn-warning float-right">Volver al listado</a>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 col-md-4 offset-md-4 mt-4 pb-3">
                 <div class="clearfix"></div>
                 <h1>Editar niño</h1>
                 <?php if (isset($mensajeOK)) { ?>
@@ -67,15 +74,15 @@ if ($nino == null) {
                 <form action="editar.php" method="post">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" required value="<?php echo $nino['nombre']; ?>"/>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required value="<?php echo $nino['nombre']; ?>" />
                     </div>
                     <div class="form-group">
                         <label for="apellido">Apellido</label>
-                        <input type="text" class="form-control" id="apellido" name="apellido" required value="<?php echo $nino['apellido']; ?>"/>
+                        <input type="text" class="form-control" id="apellido" name="apellido" required value="<?php echo $nino['apellido']; ?>" />
                     </div>
                     <div class="form-group">
                         <label for="fechaNacimiento">Fecha de nacimiento</label>
-                        <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required value="<?php echo $nino['fechanacimiento'] ?>"/>
+                        <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required value="<?php echo $nino['fechanacimiento'] ?>" />
                     </div>
                     <div class="form-group">
                         <h5>Ha sido bueno:</h5>

@@ -11,7 +11,7 @@ if (!empty($_POST)) {
     $datosRegalo['id_regalo'] = (int)filter_input(INPUT_POST, 'id_regalo', FILTER_SANITIZE_STRING);
     $datosRegalo['nombre'] = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
     $datosRegalo['precio'] = (float)filter_input(INPUT_POST, 'precio', FILTER_SANITIZE_STRING);
-    $datosRegalo['id_rey'] = filter_input(INPUT_POST, 'rey', FILTER_SANITIZE_STRING);
+    $datosRegalo['id_reymago'] = filter_input(INPUT_POST, 'reymago', FILTER_SANITIZE_STRING);
 
     try {
         $id_regalo = $regalos->update($datosRegalo);
@@ -45,17 +45,24 @@ if ($regalo == null) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="../assets/css/site.css" rel="stylesheet">
     <title>Editar regalo</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-4 offset-md-4 mt-4">
-                <div class="btn-group float-right">
-                    <a href="regalos.php" class="btn btn-primary">Volver al listado</a>
-                    <a href="crear.php" class="btn btn-success">Crear regalo</a>
-                </div>
+        <div class="row text-center py-3">
+            <div class="col-12 col-md-8 offset-md-2 mt-4">
+                <p class="bg-opacity">Practica || Tema 2 || BD en PHP</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 col-md-8 offset-md-2 mt-4">
+                <a href="regalos.php" class="btn btn-warning float-right">Volver al listado</a>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 col-md-4 offset-md-4 mt-4 pb-3">
                 <div class="clearfix"></div>
                 <h1>Editar regalo</h1>
                 <?php if (isset($mensajeOK)) { ?>
@@ -78,15 +85,15 @@ if ($regalo == null) {
                         <label for="precio">Precio</label>
                         <input type="text" class="form-control" id="precio" name="precio" placeholder="0.00" required value="<?php echo $regalo['precio']; ?>" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group py-2">
                         <h5>Elije un Rey Mago:</h5>
-                        <select name="rey">
+                        <select name="reymago">
                             <?php
                             while ($fila = $listaReyes->fetch_assoc()) {
-                                $id = $fila['id_rey'];
+                                $id = $fila['id_reymago'];
                                 $nombre = $fila['nombre'];
-                                $selected = $regalo['id_rey'] == $id ? "selected" : "";
-                                echo "<option value=".$id. " ". $selected .">".$nombre."</option>";
+                                $selected = $regalo['id_reymago'] == $id ? "selected" : "";
+                                echo "<option value=" . $id . " " . $selected . ">" . $nombre . "</option>";
                             }
                             ?>
                         </select>

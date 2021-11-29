@@ -11,15 +11,26 @@ class Recibidos
 
     public function selectFromNino($id)
     {
-        $sql = 'SELECT j.id_juguete, j.nombre FROM recibidos r, juguetes j where j.id_juguete = r.id_juguete and r.id_nino = ' . (int)$id;
+        $sql = 'SELECT j.id_regalo, j.nombre FROM recibidos r, regalos j where j.id_regalo = r.id_regalo and r.id_nino = ' . (int)$id;
         return $this->_conexion->query($sql);
     }
 
-    public function insert($id_nino, $id_juguete)
+    public function insert($id_nino, $id_regalo)
     {
-        $sql = 'INSERT INTO recibidos (id_nino, id_juguete) VALUES ("'.$id_nino.'", "'.$id_juguete.'")';
-        print_r($sql);   
-        $this->_conexion->query($sql);
+        $validador = $this->comprobarRegalo($id_nino, $id_regalo);
+        if ($validador->num_rows != 0) {
+            throw new Exception('El regalo ya existe en la lista.');
+        }
+        else{
+            $sql = 'INSERT INTO recibidos (id_nino, id_regalo) VALUES ("' . $id_nino . '", "' . $id_regalo . '")';
+            $this->_conexion->query($sql);
             return $this->_conexion->insert_id;
+        }
+    }
+
+    private function comprobarRegalo($id_nino, $id_regalo)
+    {
+        $sql = 'SELECT * FROM recibidos WHERE id_nino = "' . $id_nino . '" and id_regalo = "' . $id_regalo . '";';
+        return $this->_conexion->query($sql);
     }
 }

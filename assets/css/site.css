@@ -1,0 +1,25 @@
+html, body{
+    min-height: 100vh;
+}
+body{
+    background-image: url('../img/fondo.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.bg-opacity {
+    background-color:rgba(255, 255, 255, 0.65);
+}
+.color-black {
+    color:white !important;
+}
+.bg-bourdeo {
+    background-color: rgb(171 49 49);
+}
+.color-gold {
+    border-color: rgb(189, 178, 33);
+}
+.padding-top {
+    padding-top: 20%;
+}

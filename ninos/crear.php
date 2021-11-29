@@ -13,7 +13,7 @@ if (!empty($_POST)) {
         $id_nino = $ninos->insert($datosNino);
         if ((int) $id_nino) {
             header('Location:editar.php?msg=55&id=' . $id_nino);
-        } 
+        }
     } catch (Exception $ex) {
         $mensajeKO = $ex->getMessage();
     }
@@ -26,14 +26,24 @@ if (!empty($_POST)) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="../assets/css/site.css" rel="stylesheet">
     <title>Crear Niño:</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-4 offset-md-4 mt-4">
-                <a href="ninos.php" class="btn btn-primary float-right">Volver al listado</a>
+    <div class="container pb-5">
+        <div class="row text-center py-3">
+            <div class="col-12 col-md-8 offset-md-2 mt-4">
+                <p class="bg-opacity">Practica || Tema 2 || BD en PHP</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 col-md-8 offset-md-2 mt-4">
+                <a href="ninos.php" class="btn btn-warning float-right">Volver al listado</a>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 col-md-4 offset-md-4 mt-4 pb-3">
                 <div class="clearfix"></div>
                 <h1>Crear niño</h1>
                 <?php if (isset($mensajeOK)) { ?>
@@ -60,7 +70,7 @@ if (!empty($_POST)) {
                         <label for="fechaNacimiento">Fecha de nacimiento</label>
                         <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group py-2">
                         <h5>Ha sido bueno:</h5>
                         <select name="bueno">
                             <option value="1" selected>Si</option>

@@ -23,3 +23,4 @@ class Reyes{
         }
     }
 }
+//SELECT r.nombre, n.nombre, r.precio from reyesmagos rm, regalos r, recibidos rb, ninos n where rm.id_reymago = r.id_reymago and rm.id_reymago = 1 and r.id_regalo = rb.id_regalo and n.id_nino = rb.id_nino;

@@ -36,7 +36,11 @@ class Ninos{
     public function update($data){
         if(empty($data['nombre'])){
             throw new Exception('Debe rellenar el campo de NOMBRE.');
-        }else{
+        }
+        if(empty($data['apellido'])){
+            throw new Exception('Debe rellenar el campo de Apellido.');
+        }
+        else{
             $sql = 'UPDATE ninos SET nombre = "'.$data['nombre'].'", apellido = "'.$data['apellido'].'", fechanacimiento = "'.$data['fechaNacimiento'].'", bueno = "'.$data['bueno'].'" WHERE id_nino = '.(int)$data['id_nino'];
             $this->_conexion->query($sql);
             return (int)$data['id_nino'];

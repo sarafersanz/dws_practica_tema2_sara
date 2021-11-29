@@ -1,6 +1,8 @@
 <?php
 
 require_once('../modelos/Ninos.php');
+require_once('../modelos/Regalos.php');
+require_once('../modelos/Reyes.php');
 $reyesmagos = new Reyes();
 $rows = $reyesmagos->selectAll();
 
@@ -16,10 +18,10 @@ $rows = $reyesmagos->selectAll();
 </head>
 
 <body>
-    <div class="container">
+    <div class="container fondo">
         <div class="row justify-content-center">
             <div class="col-10 mt-4">
-                <a href="crear.php" class="btn btn-primary float-right">Reyes Magos</a>
+                <a href="../index.php" class="btn btn-primary float-right">Volver</a>
                 <h1>Melchor</h1>
                 <?php if (isset($mensajeOK)) { ?>
                     <div class="alert alert-success" role="alert">
@@ -37,11 +39,9 @@ $rows = $reyesmagos->selectAll();
                         <thead class="text-center">
                             <tr>
                                 <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Fecha de Nacimiento</th>
-                                <th>Bueno</th>
-                                <th>Acciones</th>
+                                <th>Niño</th>
+                                <th>Regalo</th>
+                                <th>Precio</th>
                             </tr>
                         </thead>
                         <tbody class="text-center">
@@ -49,15 +49,8 @@ $rows = $reyesmagos->selectAll();
                                 <tr>
                                     <td><?php echo $row['id_nino']; ?></td>
                                     <td><?php echo $row['nombre']; ?></td>
-                                    <td><?php echo $row['apellido']; ?></td>
-                                    <td><?php echo date('d-m-Y', strtotime($row['fechanacimiento'])); ?></td>
-                                    <td><?php echo $row['bueno'] == 0 ? "No" : "Si"; ?></td>
-                                    <td class="text-center">
-                                        <div class="btn-group">
-                                            <a href="editar.php?id=<?php echo $row['id_nino']; ?>" class="btn btn-success">Editar</a>
-                                            <a href="borrar.php?id=<?php echo $row['id_nino']; ?>" class="btn btn-danger">Borrar</a>
-                                        </div>
-                                    </td>
+                                    <td><?php echo $row['nombre']; ?></td>
+                                    <td class="text-right"><?php echo number_format($row['precio'], 2, ',', '.'); ?>€</td>
                                 </tr>
                             <?php } ?>
                         </tbody>

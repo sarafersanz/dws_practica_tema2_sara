@@ -11,21 +11,21 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container padding-top">
         <div class="row justify-content-center">
             <div class="col-8">
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="ninos/ninos.php">Niños</a>
+                <ul class="nav justify-content-center bg-bourdeo border border-warning rounded-pill">
+                    <li class="nav-item ">
+                        <a class="nav-link active color-black" href="ninos/ninos.php">Niños</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="regalos/regalos.php">Regalos</a>
+                        <a class="nav-link color-black" href="regalos/regalos.php">Regalos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="busqueda.php">Busqueda</a>
+                        <a class="nav-link color-black" href="busqueda.php">Busqueda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="reyes/reyes.php">Reyes Magos</a>
+                        <a class="nav-link color-black" href="reyes/reyes.php">Reyes Magos</a>
                     </li>
                 </ul>
             </div>
