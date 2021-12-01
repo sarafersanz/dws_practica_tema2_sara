@@ -10,25 +10,28 @@ if ($rows_ninos->num_rows == 0) {
 }
 
 if (isset($_POST["buscar"])) {
-    $id_nino = $_POST["nino"];
-    $recibidos = new Recibidos();
-    $regalosDeNino = $recibidos->selectFromNino($id_nino);
-    if ($regalosDeNino->num_rows == 0) {
-        $mensajeKO = 'El niño no tiene regalos.';
+    if (isset($_POST["nino"])) {
+        $id_nino = $_POST["nino"];
+        $nino = $ninos->select($id_nino);
+        $recibidos = new Recibidos();
+        $regalosDeNino = $recibidos->selectFromNino($id_nino);
+    } else {
+        $mensajeKO = "Debe seleccionar un niño.";
     }
-   
+
     $regalo = new Regalos();
     $rows_regalos = $regalo->selectAll();
     if ($rows_regalos->num_rows == 0) {
         $mensajeKO = 'No existen regalos.';
     }
-
 }
 
-if(isset($_POST["anadir"])){
-    $id_nino = $_POST["id_nino"];
+if (isset($_POST["anadir"])) {
+    $id_nino = $_POST["nino"];
     $id_regalo = $_POST["regalo"];
+
     $recibidos = new Recibidos();
+    $regalosDeNino = $recibidos->selectFromNino($id_nino);
     try {
         $id = $recibidos->insert($id_nino, $id_regalo);
         if ((int) $id) {
@@ -36,6 +39,14 @@ if(isset($_POST["anadir"])){
         }
     } catch (Exception $ex) {
         $mensajeKO = $ex->getMessage();
+    }
+    $nino = $ninos->select($id_nino);
+    $regalosDeNino = $recibidos->selectFromNino($id_nino);
+
+    $regalo = new Regalos();
+    $rows_regalos = $regalo->selectAll();
+    if ($rows_regalos->num_rows == 0) {
+        $mensajeKO = 'No existen regalos.';
     }
 }
 
@@ -62,7 +73,7 @@ if(isset($_POST["anadir"])){
         </div>
         <div class="row text-center">
             <div class="col-12 col-md-8 offset-md-2 mt-4">
-                <a href="" class="btn btn-warning float-right">volver</a>
+                <a href="./index.php" class="btn btn-warning float-right">Inicio</a>
             </div>
         </div>
         <div class="row text-center">
@@ -85,7 +96,7 @@ if(isset($_POST["anadir"])){
                     <div class="form-row">
                         <div class="form-group col-6">
                             <select id="inputChildren" class="form-control" name="nino">
-                                <option selected>Elige un niño...</option>
+                                <option selected disabled value="null">Elige un niño...</option>
                                 <?php
                                 while ($fila = $rows_ninos->fetch_assoc()) {
                                     $id = $fila['id_nino'];
@@ -103,47 +114,50 @@ if(isset($_POST["anadir"])){
             </div>
         </div>
         <?php
-        if (isset($_POST["buscar"])) { ?>
+        if (isset($_POST["nino"])) { ?>
             <div class='row'>
-                <div class='col-12 col-md-8 offset-md-2 mt-4'>
-                    <h5>Los regalos son:</h5>
+                <div class='col-12 col-md-8 offset-md-2 mt-2'>
+                    <h5>Lista de regalos de <?php echo $nino['nombre'] ?>:</h5>
                     <ul>
                         <?php
-                        while ($fila = $regalosDeNino->fetch_assoc()) {
-                            $nombre_regalo = $fila['nombre'];
-                            echo "<li>$nombre_regalo</li>";
+                        if ($regalosDeNino->num_rows != 0){
+                            while ($fila = $regalosDeNino->fetch_assoc()) {
+                                $nombre_regalo = $fila['nombre'];
+                                 echo "<li>$nombre_regalo</li>";   
+                            }
+                        } else {
+                            echo "<li>" . $nino['nombre'] . " no tiene regalos</li>";
                         }
                         ?>
                     </ul>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8 offset-md-2 mt-4">
-                    <form method="POST" action="busqueda.php">
-                        <input type="hidden" name="id_nino" value="<?php echo $_POST["nino"] ?>">
-                        <p><?php $_POST["nino"] ?></p>
-                        <div class="form-row">
-                            <div class="form-group col-6">
-                                <select id="inputToys" class="form-control" name="regalo">
-                                    <option selected>Elige un regalo...</option>
-                                    <?php
-                                    while ($fila = $rows_regalos->fetch_assoc()) {
-                                        $id = $fila['id_regalo'];
-                                        $nombre = $fila['nombre'];
-                                        echo "<option value=$id>$nombre</option>";
-                                    }
-                                    ?>
-                                </select>
+                <div class="row justify-content-center pb-5">
+                    <div class="col-12 col-md-8 offset-md-2 mt-2">
+                        <form method="POST" action="busqueda.php">
+                            <input type="hidden" name="nino" value="<?php echo $_POST["nino"] ?>">
+                            <p><?php $_POST["nino"] ?></p>
+                            <div class="form-row">
+                                <div class="form-group col-6">
+                                    <select id="inputToys" class="form-control" name="regalo">
+                                        <option selected>Elige un regalo...</option>
+                                        <?php
+                                        while ($fila = $rows_regalos->fetch_assoc()) {
+                                            $id = $fila['id_regalo'];
+                                            $nombre = $fila['nombre'];
+                                            echo "<option value=$id>$nombre</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-6">
+                                    <button type="submit" class="btn btn-success" name="anadir">Añadir</button>
+                                </div>
                             </div>
-                            <div class="form-group col-6">
-                                <button type="submit" class="btn btn-success" name="anadir">Añadir</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        <?php
-        } ?>
+        <?php } ?>
 
     </div>
 </body>

@@ -1,8 +1,9 @@
-html, body{
+html{
     min-height: 100vh;
 }
 body{
-    background-image: url('../img/fondo.jpg');
+    min-height: 100vh;
+    background-image: url('../img/fondo1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

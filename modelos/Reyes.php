@@ -6,21 +6,44 @@ class Reyes{
     public function __construct(){
         $this->_conexion = Utils::conectar();
     }
-   
-    public function selectAll(){
-        $sql = 'SELECT * FROM reyesmagos';
+       
+    public function selectRegaloMelchor(){
+        $sql ='SELECT n.nombre AS nombre_nino_melchor, r.nombre AS nombre_regalo_melchor, r.precio FROM ninos n, regalos r, recibidos rb, reyesmagos rm WHERE rm.id_reymago = r.id_reymago AND rm.id_reymago = 1 AND r.id_regalo = rb.id_regalo AND n.id_nino = rb.id_nino and n.bueno = 1;';
+        return $this->_conexion->query($sql);
+        
+    }
+    public function selectRegaloGaspar(){
+        $sql ='SELECT n.nombre AS nombre_nino_gaspar, r.nombre AS nombre_regalo_gaspar, r.precio FROM ninos n, regalos r, recibidos rb, reyesmagos rm WHERE rm.id_reymago = r.id_reymago AND rm.id_reymago = 2 AND r.id_regalo = rb.id_regalo AND n.id_nino = rb.id_nino and n.bueno = 1;';
+        return $this->_conexion->query($sql);
+        
+    }
+    public function selectRegaloBaltasar(){
+        $sql ='SELECT n.nombre AS nombre_nino_baltasar, r.nombre AS nombre_regalo_baltasar, r.precio FROM ninos n, regalos r, recibidos rb, reyesmagos rm WHERE rm.id_reymago = r.id_reymago AND rm.id_reymago = 3 AND r.id_regalo = rb.id_regalo AND n.id_nino = rb.id_nino and n.bueno = 1;';
+        return $this->_conexion->query($sql);
+        
+    }
+
+    public function comprobarReyCarbon(){
+        $sql ='SELECT r.id_reymago FROM regalos r WHERE r.nombre like "Carbón";';
+        $rows = $this->_conexion->query($sql);
+        if((int)$rows->num_rows){
+            $row = $rows->fetch_assoc();
+        }else{
+            $row = null;
+        }
+        return $row;
+
+    }
+    public function comprobarMalo(){
+        $sql ='SELECT n.id_nino, n.nombre as nombre_nino, r.nombre as nombre_carbon FROM ninos n, regalos r WHERE r.nombre like "Carbón" and n.bueno = 0;';
         return $this->_conexion->query($sql);
     }
-        
-    public function insert($data){
-        if(empty($data['nombre'])){
-            throw new Exception('Debe rellenar el campo de NOMBRE.');
-        }else{
-            $sql = 'INSERT INTO regalos (nombre) VALUES ("'.$data['nombre'].'")';
-            var_dump($sql);
-            $this->_conexion->query($sql);
-            return $this->_conexion->insert_id;
-        }
-    }
+  
+ 
 }
-//SELECT r.nombre, n.nombre, r.precio from reyesmagos rm, regalos r, recibidos rb, ninos n where rm.id_reymago = r.id_reymago and rm.id_reymago = 1 and r.id_regalo = rb.id_regalo and n.id_nino = rb.id_nino;
+
+/* SELECT n.nombre, r.nombre FROM ninos n, regalos r, recibidos rb, reyesmagos rm WHERE rm.id_reymago = r.id_reymago AND rm.id_reymago = 1 AND r.id_regalo = rb.id_regalo AND n.id_nino = rb.id_nino and n.bueno = 1;
+SELECT n.nombre, r.nombre FROM ninos n, regalos r, recibidos rb, reyesmagos rm WHERE rm.id_reymago = r.id_reymago AND rm.id_reymago = 1 AND r.id_regalo = rb.id_regalo AND n.id_nino = rb.id_nino and n.bueno = 0; 
+
+SELECT n.id_nino, n.nombre, r.nombre FROM ninos n, regalos r WHERE r.nombre like 'Carbón' and n.bueno = 0;*/
+

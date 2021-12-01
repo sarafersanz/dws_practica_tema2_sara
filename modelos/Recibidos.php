@@ -11,7 +11,7 @@ class Recibidos
 
     public function selectFromNino($id)
     {
-        $sql = 'SELECT j.id_regalo, j.nombre FROM recibidos r, regalos j where j.id_regalo = r.id_regalo and r.id_nino = ' . (int)$id;
+        $sql = 'SELECT j.id_regalo, j.nombre FROM recibidos r, regalos j WHERE j.id_regalo = r.id_regalo AND r.id_nino = ' . (int)$id;
         return $this->_conexion->query($sql);
     }
 
