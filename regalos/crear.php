@@ -38,14 +38,13 @@ if (!empty($_POST)) {
         </div>
         <div class="row align-items-center justify-content-center">
             <div class="col-10">
-                <div class="row text-center">
-                    <div class="col-12 mt-4">
-                        <a href="crear.php" class="btn btn-success float-right">Añadir</a>
+                <div class="row justify-content-center text-center">
+                    <div class="col-12 col-md-8 mt-4">
                         <a href="regalos.php" class="btn btn-warning float-left">Volver al listado</a>
                     </div>
                 </div>
-                <div class="row text-center">
-                    <div class="col-12 mt-4">
+                <div class="row text-center justify-content-center">
+                    <div class="col-6 mt-4">
                         <h1>CREAR REGALO</h1>
                         <?php if (isset($mensajeOK)) { ?>
                             <div class="alert alert-success" role="alert">
@@ -88,15 +87,6 @@ if (!empty($_POST)) {
             </div>
         </div>
     </div>
-    <footer>
-        <div class="container pt-3">
-            <div class="row text-left">
-                <div class="col-12 text-muted">
-                    <p>Sara Fernández Sánchez, 2º DAW.
-                </div>
-            </div>
-        </div>
-    </footer>
 </body>
 
 </html>

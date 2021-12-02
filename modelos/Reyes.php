@@ -46,8 +46,3 @@ class Reyes{
  
 }
 
-/* SELECT n.nombre, r.nombre FROM ninos n, regalos r, recibidos rb, reyesmagos rm WHERE rm.id_reymago = r.id_reymago AND rm.id_reymago = 1 AND r.id_regalo = rb.id_regalo AND n.id_nino = rb.id_nino and n.bueno = 1;
-SELECT n.nombre, r.nombre FROM ninos n, regalos r, recibidos rb, reyesmagos rm WHERE rm.id_reymago = r.id_reymago AND rm.id_reymago = 1 AND r.id_regalo = rb.id_regalo AND n.id_nino = rb.id_nino and n.bueno = 0; 
-
-SELECT n.id_nino, n.nombre, r.nombre FROM ninos n, regalos r WHERE r.nombre like 'Carbón' and n.bueno = 0;*/
-

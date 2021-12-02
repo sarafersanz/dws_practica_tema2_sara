@@ -11,8 +11,13 @@
 </head>
 
 <body>
-    <div class="container padding-top">
-        <div class="row justify-content-center">
+    <div class="container">
+        <div class="row text-center py-3">
+            <div class="col-12 col-md-8 offset-md-2 mt-4">
+                <p>Practica || Tema 2 || BD en PHP</p>
+            </div>
+        </div>
+        <div class="row justify-content-center padding-top">
             <div class="col-8">
                 <ul class="nav justify-content-center bg-bourdeo border border-warning rounded-pill">
                     <li class="nav-item ">

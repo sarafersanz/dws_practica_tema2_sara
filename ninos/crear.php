@@ -34,12 +34,12 @@ if (!empty($_POST)) {
     <div class="container pb-5">
         <div class="row text-center py-3">
             <div class="col-12 col-md-8 offset-md-2 mt-4">
-                <p class="bg-opacity">Practica || Tema 2 || BD en PHP</p>
+                <p>Practica || Tema 2 || BD en PHP</p>
             </div>
         </div>
         <div class="row text-center">
             <div class="col-12 col-md-8 offset-md-2 mt-4">
-                <a href="ninos.php" class="btn btn-warning float-right">Volver al listado</a>
+                <a href="ninos.php" class="btn btn-warning float-left">Volver al listado</a>
             </div>
         </div>
         <div class="row text-center">
@@ -71,8 +71,8 @@ if (!empty($_POST)) {
                         <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required />
                     </div>
                     <div class="form-group py-2">
-                        <h5>Ha sido bueno:</h5>
-                        <select name="bueno">
+                        <label>Ha sido bueno:</label>
+                        <select name="bueno" class="form-control">
                             <option value="1" selected>Si</option>
                             <option value="0">No</option>
                         </select>

@@ -58,7 +58,7 @@ if ($regalo == null) {
         </div>
         <div class="row text-center">
             <div class="col-12 col-md-8 offset-md-2 mt-4">
-                <a href="regalos.php" class="btn btn-warning float-right">Volver al listado</a>
+                <a href="regalos.php" class="btn btn-warning float-left">Volver al listado</a>
             </div>
         </div>
         <div class="row text-center">

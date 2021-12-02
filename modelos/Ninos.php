@@ -49,7 +49,7 @@ class Ninos
         if (empty($data['nombre'])) {
             throw new Exception('Debe rellenar el campo de NOMBRE.');
         } else if (empty($data['apellido'])) {
-            throw new Exception('Debe rellenar el campo de Apellido.');
+            throw new Exception('Debe rellenar el campo de APELLIDO.');
         } else if (empty($data['fechaNacimiento'])) {
             throw new Exception('Debe rellenar el campo de FECHA DE NACIMIENTO.');
         } else if (empty($data['bueno'])) {

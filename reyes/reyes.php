@@ -38,17 +38,17 @@ $totalBaltasar = 0;
                 <p class="bg-opacity">Practica || Tema 2 || BD en PHP</p>
             </div>
         </div>
-        <div class="row text-center">
-            <div class="col-12 col-md-8 offset-md-2 mt-4">
-                <a href="../index.php" class="btn btn-warning float-right">Inicio</a>
+        <div class="row text-center justify-content-center">
+            <div class="col-12 col-md-8 mt-4">
+                <a href="../index.php" class="btn btn-warning float-left">Inicio</a>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-10 mt-4 text-center">
+            <div class="col-12 col-md-8 mt-4 text-center">
                 <h1>Melchor</h1>
             </div>
             <?php if ((int)$regalosMelchor->num_rows) { ?>
-                <div class="col-10 mt-4">
+                <div class="col-12 col-md-8 mt-4 pb-5">
                     <table class="table table-striped text-center bg-opacity border">
                         <thead>
                             <tr>
@@ -56,7 +56,7 @@ $totalBaltasar = 0;
                                 <th>Regalo</th>
                             </tr>
                         </thead>
-                        <tbody class="text-center">
+                        <tbody>
                             <?php while ($regaloMelchor = $regalosMelchor->fetch_assoc()) {
                                  $totalMelchor = $regaloMelchor['precio'] + $totalMelchor;
                                  
@@ -85,17 +85,17 @@ $totalBaltasar = 0;
                 </div>
             <?php } 
             else{
-                echo "<div class='col-10 mt-2 text-center '>
+                echo "<div class='col-12 col-md-8 mt-2 text-center '>
                         <p>El saco de Melchor está vacío</p>
                     </div>";
             }?>
         </div>
         <div class="row justify-content-center">
-            <div class="col-10 mt-4 text-center">
+            <div class="col-12 col-md-8 mt-4 text-center">
                 <h1>Gaspar</h1>
             </div>
-            <?php if ((int)$regalosGaspar->num_rows) { ?>
-                <div class="col-10 mt-4">
+            <?php if ((int)$regalosGaspar->num_rows || $reyMagoReparteCarbon['id_reymago'] == '2') { ?>
+                <div class="col-12 col-md-8 mt-4 pb-5">
                     <table class="table table-striped text-center bg-opacity border">
                         <thead>
                             <tr>
@@ -129,17 +129,17 @@ $totalBaltasar = 0;
                     </table>
                 </div>
             <?php }else{
-                echo "<div class='col-10 mt-2 text-center '>
+                echo "<div class='col-12 col-md-8 mt-2 text-center '>
                         <p>El saco de Gaspar está vacío</p>
                     </div>";
             }?>
         </div>
         <div class="row justify-content-center">
-            <div class="col-10 mt-4 text-center">
+            <div class="col-12 col-md-8 mt-4 text-center">
                 <h1>Baltasar</h1>
             </div>
             <?php if ((int)$regalosBaltasar->num_rows) { ?>
-                <div class="col-10 mt-4">
+                <div class="col-12 col-md-8 mt-4 pb-5">
                     <table class="table table-striped text-center bg-opacity border">
                         <thead>
                             <tr>
@@ -174,7 +174,7 @@ $totalBaltasar = 0;
                 </div>
             <?php } 
              else{
-                echo "<div class='col-10 mt-2 text-center '>
+                echo "<div class='col-12 col-md-8 mt-2 text-center '>
                         <p>El saco de Baltasar está vacío</p>
                     </div>";
             }?>
