@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="44cm" height="32cm" viewBox="34 -83 880 632" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #65e1dd" x="277" y="168" width="66.5" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="277" y="168" width="66.5" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="310.25" y="189.2">ninos</text>
+  </g>
+  <g>
+    <ellipse style="fill: #65e1dd" cx="249.95" cy="121" rx="46.95" ry="18"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="249.95" cy="121" rx="46.95" ry="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="249.95" y="124.2">id_nino</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="223" y1="129" x2="276.9" y2="129"/>
+  </g>
+  <g>
+    <ellipse style="fill: #65e1dd" cx="98.1" cy="155" rx="43.1" ry="18"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="98.1" cy="155" rx="43.1" ry="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="98.1" y="158.2">nombre</text>
+  </g>
+  <g>
+    <ellipse style="fill: #65e1dd" cx="112.75" cy="280" rx="77.75" ry="18"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="112.75" cy="280" rx="77.75" ry="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="112.75" y="283.2">fechanacimiento</text>
+  </g>
+  <g>
+    <ellipse style="fill: #65e1dd" cx="334.65" cy="299" rx="54.65" ry="18"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="334.65" cy="299" rx="54.65" ry="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="334.65" y="302.2">buenomalo</text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="330.562" y1="280.068" x2="314.351" y2="204.994"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="147.666" y1="263.382" x2="276.003" y2="202.3"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="266.357" y1="138.686" x2="292.628" y2="167.005"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="276.001" y1="180.995" x2="139.775" y2="161.09"/>
+  <g>
+    <rect style="fill: #e6b0e2" x="682" y="170" width="81.9" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="682" y="170" width="81.9" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="722.95" y="191.2">regalos</text>
+  </g>
+  <g>
+    <ellipse style="fill: #e6b0e2" cx="830.5" cy="69" rx="58.5" ry="18"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="830.5" cy="69" rx="58.5" ry="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="830.5" y="72.2">id_juguete</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="792" y1="77" x2="869" y2="77"/>
+  </g>
+  <g>
+    <ellipse style="fill: #e6b0e2" cx="869.1" cy="185" rx="43.1" ry="18"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="869.1" cy="185" rx="43.1" ry="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="869.1" y="188.2">nombre</text>
+  </g>
+  <g>
+    <ellipse style="fill: #e6b0e2" cx="732.1" cy="307" rx="43.1" ry="18"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="732.1" cy="307" rx="43.1" ry="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="732.1" y="310.2">precio</text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="740.096" y1="169.029" x2="814.161" y2="87.0781"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="764.768" y1="187.142" x2="825.052" y2="185.904"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="730.641" y1="288.029" x2="724.409" y2="206.971"/>
+  <g>
+    <ellipse style="fill: #65e1dd" cx="88.8" cy="218" rx="50.8" ry="18"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="88.8" cy="218" rx="50.8" ry="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="88.8" y="221.2">apellido</text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="276.013" y1="190.947" x2="136.823" y2="211.061"/>
+  <g>
+    <polygon style="fill: #ffffff" points="589,98.17 635.95,70 682.9,98.17 635.95,126.34 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="589,98.17 635.95,70 682.9,98.17 635.95,126.34 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="583" y="92.17">1:1</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="688.9" y="92.17">1:N</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="635.95" y="101.37">comprar</text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="704.545" y1="168.997" x2="664.205" y2="127.344"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="599.843" y1="69.0072" x2="554.005" y2="31.9844"/>
+  <g>
+    <rect style="fill: #ffff00" x="478" y="-5" width="105" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="478" y="-5" width="105" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="530.5" y="16.2">reyesmagos</text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffff00" cx="378.5" cy="-37" rx="58.5" ry="18"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="378.5" cy="-37" rx="58.5" ry="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="378.5" y="-33.8">id_reymago</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="340" y1="-29" x2="417" y2="-29"/>
+  </g>
+  <g>
+    <ellipse style="fill: #ffff00" cx="540.1" cy="-64" rx="43.1" ry="18"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="540.1" cy="-64" rx="43.1" ry="18"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="540.1" y="-60.8">nombre</text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="477.025" y1="-4.59033" x2="419.404" y2="-23.5448"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="532.868" y1="-5.99622" x2="537.735" y2="-45.032"/>
+  <g>
+    <polygon style="fill: #ffffff" points="450,185.17 496.95,157 543.9,185.17 496.95,213.34 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="450,185.17 496.95,157 543.9,185.17 496.95,213.34 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="444" y="179.17">1:N</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="549.9" y="179.17">1:M</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="496.95" y="188.37">recibir</text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="344.493" y1="185.848" x2="449.09" y2="185.383"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="681.003" y1="187.475" x2="544.905" y2="185.77"/>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="277" y="417.5">
+    <tspan x="277" y="417.5">NINOS: (#id_nino, nombre, apellido, fechanacimiento, bueno)</tspan>
+    <tspan x="277" y="438.667"></tspan>
+    <tspan x="277" y="459.833">REYES_MAGOS:(#id_reymago, nombr, gastototal)</tspan>
+    <tspan x="277" y="481"></tspan>
+    <tspan x="277" y="502.167">REGALOS(#id_regalo, nombre, precio, id_reymago)</tspan>
+    <tspan x="277" y="523.333"></tspan>
+    <tspan x="277" y="544.5">RECIBIDOS: (#id_recibido, id_nino, id_juguete)</tspan>
+  </text>
+</svg>
