@@ -38,7 +38,7 @@ if (!empty($_GET)) {
         <div class="row text-center">
             <div class="col-12  mt-4">
                 <a href="crear.php" class="btn btn-success float-right">Añadir</a>
-                <a href="../index.php" class="btn btn-warning float-right">Inicio</a>
+                <a href="../index.php" class="btn btn-warning float-left">Inicio</a>
             </div>
         </div>
         <div class="row text-center">

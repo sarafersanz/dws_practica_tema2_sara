@@ -22,7 +22,7 @@
                         <a class="nav-link color-black" href="regalos/regalos.php">Regalos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link color-black" href="busqueda.php">Busqueda</a>
+                        <a class="nav-link color-black" href="busqueda.php">Búsqueda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link color-black" href="reyes/reyes.php">Reyes Magos</a>

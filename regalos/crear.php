@@ -41,7 +41,7 @@ if (!empty($_POST)) {
                 <div class="row text-center">
                     <div class="col-12 mt-4">
                         <a href="crear.php" class="btn btn-success float-right">Añadir</a>
-                        <a href="regalos.php" class="btn btn-warning float-right">Volver al listado</a>
+                        <a href="regalos.php" class="btn btn-warning float-left">Volver al listado</a>
                     </div>
                 </div>
                 <div class="row text-center">

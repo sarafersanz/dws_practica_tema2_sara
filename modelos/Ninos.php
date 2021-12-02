@@ -8,7 +8,7 @@ class Ninos{
     }
    
     public function selectAll(){
-        $sql = 'SELECT * FROM ninos';
+        $sql = 'SELECT * FROM ninos ORDER BY nombre ASC';
         return $this->_conexion->query($sql);
     }
     
