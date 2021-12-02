@@ -55,38 +55,39 @@ if (!empty($_GET)) {
                 <?php } ?>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12  mt-4">
-                <table class="table table-striped text-center bg-opacity border">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Descripción</th>
-                            <th>Precio</th>
-                            <th>Id_reymago</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php while ($row = $rows->fetch_assoc()) { ?>
+        <?php if ((int)$rows->num_rows) { ?>
+            <div class="row">
+                <div class="col-12 col-md-8 offset-md-2 mt-4 pb-5">
+                    <table class="table table-striped text-center bg-opacity border">
+                        <thead>
                             <tr>
-                                <td><?php echo $row['id_regalo']; ?></td>
-                                <td><?php echo $row['nombre']; ?></td>
-                                <td class="text-right"><?php echo number_format($row['precio'], 2, ',', '.'); ?>€</td>
-                                <td><?php echo $row['id_reymago']; ?></td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        <a href="editar.php?id=<?php echo $row['id_regalo']; ?>" class="btn btn-success">Editar</a>
-                                        <a href="borrar.php?id=<?php echo $row['id_regalo']; ?>" class="btn btn-danger">Borrar</a>
-                                    </div>
-                                </td>
+                                <th>ID</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Id_reymago</th>
+                                <th>Acciones</th>
                             </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php while ($row = $rows->fetch_assoc()) { ?>
+                                <tr>
+                                    <td><?php echo $row['id_regalo']; ?></td>
+                                    <td><?php echo $row['nombre']; ?></td>
+                                    <td class="text-right"><?php echo number_format($row['precio'], 2, ',', '.'); ?>€</td>
+                                    <td><?php echo $row['id_reymago']; ?></td>
+                                    <td class="text-center">
+                                        <div class="btn-group">
+                                            <a href="editar.php?id=<?php echo $row['id_regalo']; ?>" class="btn btn-outline-success">Editar</a>
+                                            <a href="borrar.php?id=<?php echo $row['id_regalo']; ?>" class="btn btn-outline-danger">Borrar</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-
+        <?php } ?>
     </div>
 </body>
 

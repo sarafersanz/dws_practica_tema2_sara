@@ -6,6 +6,10 @@ class Reyes{
     public function __construct(){
         $this->_conexion = Utils::conectar();
     }
+    public function selectAll(){
+        $sql = 'SELECT * FROM reyesmagos';
+        return $this->_conexion->query($sql);
+    }
        
     public function selectRegaloMelchor(){
         $sql ='SELECT n.nombre AS nombre_nino_melchor, r.nombre AS nombre_regalo_melchor, r.precio FROM ninos n, regalos r, recibidos rb, reyesmagos rm WHERE rm.id_reymago = r.id_reymago AND rm.id_reymago = 1 AND r.id_regalo = rb.id_regalo AND n.id_nino = rb.id_nino and n.bueno = 1;';

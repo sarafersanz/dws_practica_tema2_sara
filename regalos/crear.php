@@ -4,7 +4,7 @@ if (!empty($_POST)) {
     $datosRegalo = [];
     $datosRegalo['nombre'] = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
     $datosRegalo['precio'] = (float)filter_input(INPUT_POST, 'precio', FILTER_SANITIZE_STRING);
-    $datosRegalo['id_reymago'] = filter_input(INPUT_POST, 'reymago', FILTER_SANITIZE_STRING);
+    $datosRegalo['id_reymago'] = (int)filter_input(INPUT_POST, 'reymago', FILTER_SANITIZE_STRING);
 
     require_once('../modelos/Regalos.php');
     $regalos = new Regalos();
@@ -46,7 +46,7 @@ if (!empty($_POST)) {
                 </div>
                 <div class="row text-center">
                     <div class="col-12 mt-4">
-                        <h1>CREAR JUGUETE</h1>
+                        <h1>CREAR REGALO</h1>
                         <?php if (isset($mensajeOK)) { ?>
                             <div class="alert alert-success" role="alert">
                                 <?php echo $mensajeOK; ?>
@@ -64,16 +64,16 @@ if (!empty($_POST)) {
                             <div class="col-4">
                                 <form action="crear.php" method="post">
                                     <div class="form-group">
-                                        <label for="nombre">Nombre</label>
+                                        <label for="nombre">Nombre:</label>
                                         <input type="text" class="form-control" id="nombre" name="nombre" required />
                                     </div>
                                     <div class="form-group">
-                                        <label for="precio">Precio</label>
+                                        <label for="precio">Precio:</label>
                                         <input type="text" class="form-control" id="precio" name="precio" placeholder="0.00" required />
                                     </div>
                                     <div class="form-group py-2">
-                                        <h5>Rey Mago:</h5>
-                                        <select name="reymago">
+                                        <label>Rey Mago:</label>
+                                        <select name="reymago" class="form-control">
                                             <option value="1" selected>Melchor</option>
                                             <option value="2">Gaspar</option>
                                             <option value="3">Baltasar</option>

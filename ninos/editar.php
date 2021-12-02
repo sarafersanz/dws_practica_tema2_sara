@@ -85,8 +85,8 @@ if ($nino == null) {
                         <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required value="<?php echo $nino['fechanacimiento'] ?>" />
                     </div>
                     <div class="form-group">
-                        <h5>Ha sido bueno:</h5>
-                        <select name="bueno">
+                        <label>Ha sido bueno:</label>
+                        <select name="bueno" class="form-control">
                             <option value="<?php echo $nino['bueno']; ?>" selected><?php echo $nino['bueno'] == 0 ? "No" : "Si"; ?></option>
                             <option value="<?php echo $nino['bueno'] == 0 ? "1" : "0"; ?>"><?php echo $nino['bueno'] == 0 ? "Si" : "No"; ?></option>
                         </select>

@@ -11,7 +11,7 @@ if (!empty($_POST)) {
     $datosRegalo['id_regalo'] = (int)filter_input(INPUT_POST, 'id_regalo', FILTER_SANITIZE_STRING);
     $datosRegalo['nombre'] = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
     $datosRegalo['precio'] = (float)filter_input(INPUT_POST, 'precio', FILTER_SANITIZE_STRING);
-    $datosRegalo['id_reymago'] = filter_input(INPUT_POST, 'reymago', FILTER_SANITIZE_STRING);
+    $datosRegalo['id_reymago'] = (int)filter_input(INPUT_POST, 'reymago', FILTER_SANITIZE_STRING);
 
     try {
         $id_regalo = $regalos->update($datosRegalo);
@@ -78,16 +78,16 @@ if ($regalo == null) {
             <div class="col-12 col-md-4 offset-md-4">
                 <form action="editar.php" method="post">
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
+                        <label for="nombre">Nombre:</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" required value="<?php echo $regalo['nombre']; ?>" />
                     </div>
                     <div class="form-group">
-                        <label for="precio">Precio</label>
+                        <label for="precio">Precio:</label>
                         <input type="text" class="form-control" id="precio" name="precio" placeholder="0.00" required value="<?php echo $regalo['precio']; ?>" />
                     </div>
                     <div class="form-group py-2">
-                        <h5>Elije un Rey Mago:</h5>
-                        <select name="reymago">
+                        <label>Elije un Rey Mago:</label>
+                        <select name="reymago" class="form-control">
                             <?php
                             while ($fila = $listaReyes->fetch_assoc()) {
                                 $id = $fila['id_reymago'];

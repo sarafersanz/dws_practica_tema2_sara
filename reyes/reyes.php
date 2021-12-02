@@ -83,7 +83,12 @@ $totalBaltasar = 0;
                         </tfoot>
                     </table>
                 </div>
-            <?php } ?>
+            <?php } 
+            else{
+                echo "<div class='col-10 mt-2 text-center '>
+                        <p>El saco de Melchor está vacío</p>
+                    </div>";
+            }?>
         </div>
         <div class="row justify-content-center">
             <div class="col-10 mt-4 text-center">
@@ -123,7 +128,11 @@ $totalBaltasar = 0;
                         </tfoot>
                     </table>
                 </div>
-            <?php } ?>
+            <?php }else{
+                echo "<div class='col-10 mt-2 text-center '>
+                        <p>El saco de Gaspar está vacío</p>
+                    </div>";
+            }?>
         </div>
         <div class="row justify-content-center">
             <div class="col-10 mt-4 text-center">
@@ -163,7 +172,12 @@ $totalBaltasar = 0;
                         </tfoot>
                     </table>
                 </div>
-            <?php } ?>
+            <?php } 
+             else{
+                echo "<div class='col-10 mt-2 text-center '>
+                        <p>El saco de Baltasar está vacío</p>
+                    </div>";
+            }?>
         </div>
 
     </div>
