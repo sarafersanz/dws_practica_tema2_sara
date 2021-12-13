@@ -92,7 +92,7 @@ if ($nino == null) {
                         </select>
                     </div>
                     <input type="hidden" class="form-control" id="id_nino" name="id_nino" value="<?php echo $nino['id_nino']; ?>" />
-                    <button type="submit" class="btn btn-success">Crear</button>
+                    <button type="submit" class="btn btn-success">Editar</button>
                 </form>
             </div>
         </div>

@@ -3,12 +3,12 @@ require_once('../modelos/Regalos.php');
 $regalos = new Regalos();
 $rows = $regalos->selectAll();
 if ($rows->num_rows == 0) {
-    $mensajeKO = 'No existen datos de niños.';
+    $mensajeKO = 'No existen datos de regalos.';
 }
 if (!empty($_GET)) {
     $idMensaje = (int) filter_input(INPUT_GET, 'msg');
     if ($idMensaje == 77) {
-        $mensajeOK = 'El niño ha sido borrado correctamente.';
+        $mensajeOK = 'El regalo ha sido borrado correctamente.';
     } else if ($idMensaje == 66) {
         $mensajeKO = 'Lo sentimos pero los datos introducidos no existen.';
     }
@@ -75,7 +75,7 @@ if (!empty($_GET)) {
                                         <td><?php echo $row['id_regalo']; ?></td>
                                         <td><?php echo $row['nombre']; ?></td>
                                         <td class="text-right"><?php echo number_format($row['precio'], 2, ',', '.'); ?>€</td>
-                                        <td><?php echo $row['id_reymago']; ?></td>
+                                        <td><?php echo $row['reyMago']; ?></td>
                                         <td class="text-center">
                                             <div class="btn-group">
                                                 <a href="editar.php?id=<?php echo $row['id_regalo']; ?>" class="btn btn-outline-success">Editar</a>

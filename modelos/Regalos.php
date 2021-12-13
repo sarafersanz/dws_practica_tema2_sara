@@ -11,7 +11,7 @@ class Regalos
 
     public function selectAll()
     {
-        $sql = 'SELECT * FROM regalos';
+        $sql = 'SELECT r.id_regalo as id_regalo, r.nombre as nombre, r.precio as precio, rm.nombre as reyMago FROM regalos r, reyesmagos rm where r.id_reymago = rm.id_reymago order by r.nombre asc;';
         return $this->_conexion->query($sql);
     }
 

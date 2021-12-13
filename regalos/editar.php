@@ -99,7 +99,7 @@ if ($regalo == null) {
                         </select>
                     </div>
                     <input type="hidden" class="form-control" id="id_regalo" name="id_regalo" value="<?php echo $regalo['id_regalo']; ?>" />
-                    <button type="submit" class="btn btn-success">Crear</button>
+                    <button type="submit" class="btn btn-success">Editar</button>
                 </form>
             </div>
         </div>
